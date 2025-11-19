@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.canvas-container {
+    flex: 1;
+    padding: 10px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+canvas {
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    cursor: crosshair;
+    background: white;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.controls {
+    width: 320px;
+    padding: 15px;
+    background: white;
+    border-left: 2px solid #e0e0e0;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.control-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.control-group:last-child {
+    border-bottom: none;
+}
+
+.control-group h3 {
+    color: #667eea;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #667eea;
+    border: 2px solid #667eea;
+    font-size: 12px;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-danger {
+    background: #ff4757;
+    color: white;
+    font-size: 12px;
+}
+
+.btn-danger:hover {
+    background: #ff3838;
+}
+
+.charge-list {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.charge-item {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 12px;
+    border-left: 3px solid #667eea;
+}
+
+.charge-item button {
+    width: auto;
+    padding: 3px 8px;
+    margin: 0 0 0 5px;
+    font-size: 11px;
+}
+
+.checkbox-group {
+    margin: 8px 0;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 6px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.info {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #1976d2;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.value-display {
+    font-weight: 700;
+    color: #667eea;
+}
+
+/* Scrollbar personalizado */
+.controls::-webkit-scrollbar {
+    width: 6px;
+}
+
+.controls::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.controls::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.controls::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 1024px) {
+    .controls {
+        width: 280px;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .canvas-container {
+        flex: 0.7;
+    }
+    
+    .controls {
+        width: 100%;
+        border-left: none;
+        border-top: 2px solid #e0e0e0;
+        max-height: 30%;
+    }
+}
